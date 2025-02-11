@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  min-width: 250px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+footer {
+  padding-top: 2rem;
+  margin-top: auto;
+  color: #888;
+}
+footer span {
+  color: var(--primary);
+}
+
+h1 {
+  margin-top: 2rem;
+}

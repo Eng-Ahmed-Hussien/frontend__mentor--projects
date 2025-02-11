@@ -1,0 +1,36 @@
+.bannerContainer {
+  width: 100vw;
+  overflow: hidden;
+  background: var(--light-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.banner {
+  display: flex;
+  width: 200vw;
+  animation: slideText 30s linear infinite;
+}
+
+.text {
+  width: 100vw;
+  font-weight: bold;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slideText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}

@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --txt-color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+  --light-primary: #747bff;
+  --primary: #646cff;
+  --dark-primary: #535bf2;
+  --link-bg: #1a1a1a;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--txt-color);
+  background-color: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+img {
+  width: 100%;
+}
+
+a,
+button,
+input,
+select {
+  position: relative;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: inherit;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--link-bg);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+select {
+  /* make room for custom arrow */
+  padding-right: 3.5em;
+
+  /* reset default arrow*/
+  appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* add custom arrow */
+  background-image: linear-gradient(45deg, transparent 50%, var(--primary) 50%),
+    linear-gradient(135deg, var(--primary) 50%, transparent 50%),
+    linear-gradient(to right, var(--primary), var(--primary));
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  background-image: linear-gradient(45deg, var(--primary) 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, var(--primary) 50%),
+    linear-gradient(to right, var(--primary), var(--primary));
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+a:hover,
+button:hover,
+input:hover,
+select:hover {
+  border-color: var(--primary);
+  color: var(--dark-primary);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  /* outline: 1px solid var(--primary); */
+  outline: 0;
+  border-color: var(--primary);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  margin: 0;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  font: inherit;
+  border: 2px solid var(--txt-color);
+  border-radius: 4px;
+  position: relative;
+
+  display: inline-block;
+}
+
+input[type="checkbox"]:focus-visible {
+  border: 2px solid var(--primary);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary);
+}
+
+input[type="checkbox"] {
+  position: relative;
+}
+
+input[type="checkbox"]:after {
+  content: "";
+  width: 5px;
+  height: 10px;
+  border: solid var(--txt-color);
+  border-width: 0 3px 3px 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  display: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --txt-color: #213547;
+    --bg-color: #ffffff;
+    --link-bg: #f9f9f9;
+  }
+  a:hover,
+  button:hover,
+  input:hover,
+  select:hover {
+    color: var(--light-primary);
+  }
+}
